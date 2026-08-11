@@ -1,0 +1,258 @@
+/* 
+ * NSBM EventHub - Main Custom Stylesheet
+ * Advanced HTML5/CSS3 UI with Dark/Light Theme support, Glassmorphism, and Micro-interactions
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --nsbm-green-primary: #006837;
+    --nsbm-green-accent: #00a859;
+    --nsbm-navy: #0f172a;
+    --bg-main: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-border: rgba(226, 232, 240, 0.8);
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --input-bg: #ffffff;
+    --input-border: #cbd5e1;
+    --nsbm-card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    --nsbm-glow-shadow: 0 0 20px rgba(0, 168, 89, 0.3);
+}
+
+[data-theme="dark"] {
+    --nsbm-green-primary: #00a859;
+    --nsbm-green-accent: #10b981;
+    --nsbm-navy: #020617;
+    --bg-main: #0b0f19;
+    --card-bg: rgba(15, 23, 42, 0.85);
+    --card-border: rgba(51, 65, 85, 0.6);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --input-bg: #1e293b;
+    --input-border: #334155;
+    --nsbm-card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+    --nsbm-glow-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-wrapper {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar-nsbm {
+    background: linear-gradient(135deg, var(--nsbm-navy) 0%, #1e293b 100%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand-badge {
+    background: linear-gradient(135deg, #006837 0%, #00a859 100%);
+    color: #ffffff;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0, 168, 89, 0.3);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #cbd5e1 !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    box-shadow: var(--nsbm-card-shadow);
+    transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.25s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero Section */
+.hero-gradient {
+    background: linear-gradient(135deg, #0d1b2a 0%, #004d28 100%);
+    border-radius: 24px;
+    color: white;
+    padding: 3.5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 168, 89, 0.25) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+}
+
+/* Stat Cards */
+.stat-card {
+    border-left: 5px solid var(--nsbm-green-accent);
+    border-radius: 14px;
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: rgba(0, 168, 89, 0.12);
+    color: var(--nsbm-green-accent);
+}
+
+/* Form inputs in light/dark mode */
+.form-control, .form-select {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-primary);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    border-color: var(--nsbm-green-accent);
+    box-shadow: 0 0 0 0.25rem rgba(0, 168, 89, 0.2);
+}
+
+/* Custom Table */
+.table-custom {
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    color: var(--text-primary);
+}
+
+.table-custom tbody tr {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.table-custom tbody tr:hover {
+    transform: scale(1.005);
+    background-color: rgba(0, 168, 89, 0.05);
+}
+
+.table-custom td, .table-custom th {
+    padding: 16px 20px;
+    vertical-align: middle;
+    border: none;
+}
+
+/* Buttons */
+.btn-nsbm {
+    background: linear-gradient(135deg, #006837 0%, #00a859 100%);
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 22px;
+    transition: all 0.25s ease;
+}
+
+.btn-nsbm:hover {
+    color: #ffffff;
+    box-shadow: var(--nsbm-glow-shadow);
+    transform: translateY(-2px);
+}
+
+.btn-nsbm-outline {
+    border: 2px solid var(--nsbm-green-accent);
+    color: var(--nsbm-green-accent);
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 8px 20px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.btn-nsbm-outline:hover {
+    background: var(--nsbm-green-accent);
+    color: #ffffff;
+    box-shadow: var(--nsbm-glow-shadow);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(15deg);
+}
+
+/* Seat progress bar animation */
+.progress-seat {
+    height: 8px;
+    border-radius: 6px;
+    background-color: var(--input-border);
+    overflow: hidden;
+}
+
+.progress-bar {
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animated Seat Pulse Badge */
+.pulse-badge {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+    70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Footer */
+footer {
+    background-color: var(--nsbm-navy);
+    color: #94a3b8;
+    margin-top: auto;
+}

@@ -1,0 +1,136 @@
+<?php
+/**
+ * NSBM EventHub - Root Landing Page / Router
+ */
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Redirect logged-in users to their respective dashboards
+if (isset($_SESSION['user_id'])) {
+    if ($_SESSION['user_role'] === 'admin') {
+        header("Location: admin/dashboard.php");
+    } else {
+        header("Location: student/dashboard.php");
+    }
+    exit();
+}
+
+$page_title = "Welcome to NSBM EventHub";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $page_title; ?></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<!-- Header Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-nsbm sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
+            <span class="navbar-brand-badge"><i class="bi bi-calendar2-event-fill me-1"></i> NSBM</span>
+            <span class="fw-bold tracking-wide">EventHub</span>
+        </a>
+        <div class="ms-auto d-flex align-items-center gap-2">
+            <a class="btn btn-outline-light rounded-pill px-3 py-1" href="auth/login.php"><i class="bi bi-box-arrow-in-right me-1"></i> Login</a>
+            <a class="btn btn-nsbm rounded-pill px-3 py-1" href="auth/register.php"><i class="bi bi-person-plus me-1"></i> Register</a>
+        </div>
+    </div>
+</nav>
+
+<div class="main-wrapper py-5">
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <div class="hero-gradient p-5 shadow-lg mb-5 text-center text-md-start">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-7">
+                    <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-50 px-3 py-2 rounded-pill mb-3">
+                        <i class="bi bi-mortarboard-fill me-1"></i> Official NSBM Campus Platform
+                    </span>
+                    <h1 class="display-4 fw-extrabold mb-3">Discover, Schedule & Attend Campus Events</h1>
+                    <p class="lead text-light opacity-90 mb-4">
+                        NSBM EventHub connects students with faculty workshops, sports championships, hackathons, and cultural festivals. Reserve seats in real-time!
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
+                        <a href="auth/register.php" class="btn btn-nsbm btn-lg px-4 rounded-pill shadow-sm">
+                            <i class="bi bi-rocket-takeoff me-2"></i>Get Started Free
+                        </a>
+                        <a href="auth/login.php" class="btn btn-outline-light btn-lg px-4 rounded-pill">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Student & Staff Login
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="p-4 bg-white bg-opacity-10 rounded-4 border border-white border-opacity-20 shadow">
+                        <i class="bi bi-calendar-week display-1 text-warning mb-3"></i>
+                        <h4 class="fw-bold">Seamless Seat Reservations</h4>
+                        <p class="small text-light opacity-75 mb-0">Automatic seat tracking prevents double-booking and ensures fair access to all events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Overview Grid -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="glass-card p-4 h-100">
+                    <div class="stat-icon mb-3">
+                        <i class="bi bi-ticket-perforated"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Instant Event Signups</h5>
+                    <p class="text-muted small">Register for your favorite workshops or sports events with a single click. Capacity limits are updated live.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="glass-card p-4 h-100">
+                    <div class="stat-icon mb-3">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Personal Schedule</h5>
+                    <p class="text-muted small">Keep track of your upcoming timetable under "My Schedule" so you never miss a lecture or hackathon session.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="glass-card p-4 h-100">
+                    <div class="stat-icon mb-3">
+                        <i class="bi bi-megaphone-fill"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Campus Announcements</h5>
+                    <p class="text-muted small">Stay informed with direct notices from administrators and event organizers sent straight to your dashboard.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Demo Credentials Box -->
+        <div class="alert alert-info border-0 shadow-sm rounded-4 p-4">
+            <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-info-circle-fill display-6 text-info"></i>
+                <div>
+                    <h6 class="fw-bold mb-1">Learning Project - Quick Demo Credentials:</h6>
+                    <ul class="mb-0 small text-dark">
+                        <li><strong>Admin Account:</strong> <code>admin@nsbm.ac.lk</code> / Password: <code>admin123</code></li>
+                        <li><strong>Student Account:</strong> <code>kamal@student.nsbm.ac.lk</code> / Password: <code>student123</code></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="py-4 border-top border-secondary border-opacity-25 mt-auto">
+    <div class="container text-center">
+        <p class="small text-muted mb-0">NSBM EventHub &copy; <?php echo date('Y'); ?> NSBM Green University. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
