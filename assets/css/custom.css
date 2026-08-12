@@ -1,59 +1,47 @@
 /* 
- * NSBM EventHub - Main Custom Stylesheet
- * Advanced HTML5/CSS3 UI with Dark/Light Theme support, Glassmorphism, and Micro-interactions
+ * NSBM EventHub - Basic Stylesheet
+ * Simple HTML5/CSS3 UI for student projects
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
 
 :root {
-    --nsbm-green-primary: #006837;
-    --nsbm-green-accent: #00a859;
-    --nsbm-navy: #0f172a;
-    --bg-main: #f8fafc;
-    --card-bg: rgba(255, 255, 255, 0.9);
-    --card-border: rgba(226, 232, 240, 0.8);
-    --text-primary: #1e293b;
+    --nsbm-green: #097a78;
+    --nsbm-accent: #FFD166;
+    --nsbm-navy: #9D00FF;
+    --bg-main: 	#4A4E69;
+    --text-primary: #FF6F00;
     --text-secondary: #64748b;
-    --input-bg: #ffffff;
-    --input-border: #cbd5e1;
-    --nsbm-card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
-    --nsbm-glow-shadow: 0 0 20px rgba(0, 168, 89, 0.3);
-}
-
-[data-theme="dark"] {
-    --nsbm-green-primary: #00a859;
-    --nsbm-green-accent: #10b981;
-    --nsbm-navy: #020617;
-    --bg-main: #0b0f19;
-    --card-bg: rgba(15, 23, 42, 0.85);
-    --card-border: rgba(51, 65, 85, 0.6);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --input-bg: #1e293b;
-    --input-border: #334155;
-    --nsbm-card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
-    --nsbm-glow-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
 }
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--bg-main);
     color: var(--text-primary);
+    margin: 0;
+    padding: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .main-wrapper {
     flex: 1;
+    padding: 20px;
 }
 
 /* Navbar */
 .navbar-nsbm {
-    background: linear-gradient(135deg, var(--nsbm-navy) 0%, #1e293b 100%);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
+    margin-bottom: 1%;
+    color: white;
+    padding: 10px 20px;
+    padding-bottom: 40px;
+    background: linear-gradient(
+        to bottom,
+        #9D00FF 0%,        /* solid navbar color */
+        #4A4E69 95%,       /* keep most of it solid */
+        #4A4E69 100% /* fade to transparent */
+    );
 }
 
 .navbar-brand-badge {
@@ -79,7 +67,7 @@ body {
 
 /* Glassmorphism Cards */
 .glass-card {
-    background: var(--card-bg);
+    background: #097a78;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--card-border);
@@ -128,7 +116,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    background: rgba(0, 168, 89, 0.12);
+    background: rgba(134, 223, 181, 0.12);
     color: var(--nsbm-green-accent);
 }
 
@@ -148,7 +136,6 @@ body {
     border-color: var(--nsbm-green-accent);
     box-shadow: 0 0 0 0.25rem rgba(0, 168, 89, 0.2);
 }
-
 /* Custom Table */
 .table-custom {
     border-collapse: separate;
@@ -221,12 +208,10 @@ body {
     cursor: pointer;
     transition: all 0.25s ease;
 }
-
 .theme-toggle-btn:hover {
     background: rgba(255, 255, 255, 0.25);
     transform: rotate(15deg);
 }
-
 /* Seat progress bar animation */
 .progress-seat {
     height: 8px;
@@ -254,5 +239,7 @@ body {
 footer {
     background-color: var(--nsbm-navy);
     color: #94a3b8;
+    text-align: center;
+    padding: 15px;
     margin-top: auto;
 }
