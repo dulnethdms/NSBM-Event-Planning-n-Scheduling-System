@@ -2,111 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to NSBM EventHub</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Icon font only (not the Bootstrap framework) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="assets/css/custom.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 
-<!-- Header Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark navbar-nsbm sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-      <span class="navbar-brand-badge"><i class="bi bi-calendar2-event-fill me-1"></i> NSBM</span>
-      <span class="fw-bold">EventHub</span>
+<!-- Navbar -->
+<section class="navsec">
+<nav class="navbar-nsbm">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <span>NSBM EventHub</span>
     </a>
-    <div class="ms-auto d-flex align-items-center gap-2">
-      <a class="btn btn-outline-light px-3 py-1" href="auth/login.html"><i class="bi bi-box-arrow-in-right me-1"></i> Login</a>
-      <a class="btn btn-nsbm px-3 py-1" href="auth/register.html"><i class="bi bi-person-plus me-1"></i> Register</a>
+    <div class="nav-actions">
+      <a class="btn btn-outline" href="auth/login.html">
+        <i class="bi bi-box-arrow-in-right"></i> Login
+      </a>
+      <a class="btn btn-nsbm" href="auth/register.html">
+        <i class="bi bi-person-plus"></i> Register
+      </a>
     </div>
   </div>
 </nav>
+</section>
+
 
 <!-- Main Wrapper -->
-<div class="main-wrapper py-5">
-  <div class="container-fluid">
-    
+<main class="main-wrapper">
+  <div class="container">
+
     <!-- Hero Section -->
-    <div class="hero-gradient p-5 mb-5 text-center text-md-start">
-      <div class="row align-items-center gy-4">
-        <div class="col-lg-7">
-          <span class="badge bg-success bg-opacity-25 text-success border border-success px-3 py-2 rounded-pill mb-3">
-            <i class="bi bi-mortarboard-fill me-1"></i> Official NSBM Campus Platform
-          </span>
-          <h1 class="display-4 fw-bold mb-3">Discover, Schedule & Attend Campus Events</h1>
-          <p class="lead text-light mb-4">
-            NSBM EventHub connects students with faculty workshops, sports championships, hackathons, and cultural festivals. Reserve seats in real-time!
-          </p>
-          <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
-            <a href="auth/register.html" class="btn btn-nsbm btn-lg px-4">
-              <i class="bi bi-rocket-takeoff me-2"></i>Get Started Free
-            </a>
-            <a href="auth/login.html" class="btn btn-outline-light btn-lg px-4">
-              <i class="bi bi-box-arrow-in-right me-2"></i>Student & Staff Login
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-5 text-center">
-          <div class="p-4 bg-white bg-opacity-10 rounded shadow">
-            <i class="bi bi-calendar-week display-1 text-warning mb-3"></i>
-            <h4 class="fw-bold">Seamless Seat Reservations</h4>
-            <p class="small text-light mb-0">Automatic seat tracking prevents double-booking and ensures fair access to all events.</p>
-          </div>
+    <section class="herosec">
+    <class="hero-section">
+      <div class="hero-section loading">
+      <div class="hero-text">
+        <span class="badge">
+          <i class="bi bi-mortarboard-fill"></i> Official NSBM Campus Platform
+        </span>
+        <h1>Discover, Schedule &amp; Attend Campus Events</h1>
+        <p class="lead">
+          NSBM EventHub connects students with faculty workshops, sports championships, hackathons, and cultural festivals. Reserve seats in real-time!
+        </p>
+        <div class="hero-actions">
+          <a href="auth/register.html" class="btn btn-nsbm btn-lg">
+            <i class="bi bi-rocket-takeoff"></i> Get Started Free
+          </a>
+          <a href="auth/login.html" class="btn btn-outline btn-lg">
+            <i class="bi bi-box-arrow-in-right"></i> Student &amp; Staff Login
+          </a>
         </div>
       </div>
+
+      <div class="hero-box">
+        <i class="bi bi-calendar-week hero-box-icon"></i>
+        <h4>Seamless Seat Reservations</h4>
+        <p>Automatic seat tracking prevents double-booking and ensures fair access to all events.</p>
+      </div>
     </div>
+    </section>
 
     <!-- Features Grid -->
-    <div class="row g-4 mb-5">
-      <div class="col-md-4">
-        <div class="glass-card p-4 h-100">
-          <div class="stat-icon mb-3"><i class="bi bi-ticket-perforated"></i></div>
-          <h5 class="fw-bold mb-2">Instant Event Signups</h5>
-          <p class="text-muted small">Register for workshops or sports events with a single click. Capacity limits update live.</p>
-        </div>
+    <section class="panel-container">
+      <div class="panel">
+        <i class="bi bi-ticket-perforated panel-icon"></i>
+        <h5>Instant Event Signups</h5>
+        <p>Register for workshops or sports events with a single click. Capacity limits update live.</p>
       </div>
-      <div class="col-md-4">
-        <div class="glass-card p-4 h-100">
-          <div class="stat-icon mb-3"><i class="bi bi-clock-history"></i></div>
-          <h5 class="fw-bold mb-2">Personal Schedule</h5>
-          <p class="text-muted small">Track your timetable under "My Schedule" so you never miss a session.</p>
-        </div>
+      <div class="panel">
+        <i class="bi bi-clock-history panel-icon"></i>
+        <h5>Personal Schedule</h5>
+        <p>Track your timetable under "My Schedule" so you never miss a session.</p>
       </div>
-      <div class="col-md-4">
-        <div class="glass-card p-4 h-100">
-          <div class="stat-icon mb-3"><i class="bi bi-megaphone-fill"></i></div>
-          <h5 class="fw-bold mb-2">Campus Announcements</h5>
-          <p class="text-muted small">Stay informed with notices from administrators and event organizers.</p>
-        </div>
+      <div class="panel">
+        <i class="bi bi-megaphone-fill panel-icon"></i>
+        <h5>Campus Announcements</h5>
+        <p>Stay informed with notices from administrators and event organizers.</p>
       </div>
-    </div>
+    </section>
 
     <!-- Demo Credentials -->
-    <div class="alert alert-info p-4">
-      <div class="d-flex align-items-center gap-3">
-        <i class="bi bi-info-circle-fill display-6 text-info"></i>
-        <div>
-          <h6 class="fw-bold mb-1">Learning Project - Demo Credentials:</h6>
-          <ul class="mb-0 small text-dark">
-            <li><strong>Admin:</strong> <code>admin@nsbm.ac.lk</code> / <code>admin123</code></li>
-            <li><strong>Student:</strong> <code>kamal@student.nsbm.ac.lk</code> / <code>student123</code></li>
-          </ul>
-        </div>
+    <section class="alert-info">
+      <i class="bi bi-info-circle-fill alert-icon"></i>
+      <div>
+        <h6>Learning Project - Demo Credentials:</h6>
+        <ul>
+          <li><strong>Admin:</strong> <code>admin@nsbm.ac.lk</code> / <code>admin123</code></li>
+          <li><strong>Student:</strong> <code>kamal@student.nsbm.ac.lk</code> / <code>student123</code></li>
+        </ul>
       </div>
-    </div>
+    </section>
 
   </div>
-</div>
+</main>
 
 <!-- Footer -->
-<footer class="py-4 mt-auto bg-dark text-light">
-  <div class="container-fluid text-center">
-    <p class="small mb-0">NSBM EventHub &copy; 2026 NSBM Green University. All rights reserved.</p>
+<footer>
+  <div class="container">
+    <p>NSBM EventHub &copy; 2026 NSBM Green University. All rights reserved.</p>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
