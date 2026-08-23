@@ -93,8 +93,9 @@ h1, h4, h5, h6 {
 
 
     .photo-section {
-      height: 200vh; /* enough scroll space */
+      height: 160vh; /* enough scroll space */
       position: relative;
+      margin-top:-1px;
     }
 
     .photo-wrapper {
@@ -117,9 +118,17 @@ h1, h4, h5, h6 {
     }
 
     .overlay-photo {
-      z-index: -1;
-      clip-path: circle(0% at 50% 50%);
+    z-index: 2;
+    transform: scale(1); /* start normal size */
+    opacity: 0;          /* start hidden */
+    
     }
+    
+ 
+
+
+
+
 
 
 
