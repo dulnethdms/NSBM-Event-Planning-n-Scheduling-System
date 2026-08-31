@@ -5,7 +5,7 @@
 
 
 
-    //photo frame
+//photo frame
 
 
 document.addEventListener("scroll", () => {
