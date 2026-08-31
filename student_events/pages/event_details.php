@@ -17,8 +17,12 @@
         <h1>
             <?php echo $title; ?>
         </h1>
-        <>
+        
+        <div class="imageCarousel">
+            <>
+        </div>
+    </div>
 
-</div>
+    <?php require_once "student_events\essentials\footer.php" ?>
 </body>
 </html>
