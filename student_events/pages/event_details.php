@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php require_once "C:\xampp\htdocs\NSBM-Event-Planning-n-Scheduling-System\database\eventsdb_init.php";
+    <?php require_once "database\eventsdb_connect.php";
         $Id = $_POST["eventId"];
         $sql = "SELECT eventName FROM event_details WHERE eventId=$Id;";
 
