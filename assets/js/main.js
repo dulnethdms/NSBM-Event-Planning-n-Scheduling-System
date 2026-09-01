@@ -25,7 +25,7 @@ document.addEventListener("scroll", () => {
   progress = Math.min(Math.max(progress, 0), 1);
 
   // zoom overlay image
-  const scale = 1 + progress * 0.5; // zoom from 1 → 1.5
+  const scale = 1 + progress * 1; // zoom from 1 → 1.5
   
   overlay.style.opacity = progress; // fade in overlay
 

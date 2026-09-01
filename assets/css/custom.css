@@ -6,7 +6,7 @@
 :root {
     --nsbm-green: #22c55e;
     --nsbm-green-soft: rgba(34, 197, 94, 0.6);
-    --nsbm-accent: #FF7A1A;      /* Orange for CTA */
+    --nsbm-accent: #079d22;      /* Orange for CTA */
     --nsbm-navy: #0B3B2E;        /* Navbar dark green */
     --bg-main: #0A0F14;
     --bg-main-nav: #1d2a38;          /* Page background */
@@ -53,23 +53,26 @@ h1, h4, h5, h6 {
     padding: 3rem 0;
     flex: 1;
 }
-
+.herotext{
+    color:white;
+}
 /* ---------- Navbar ---------- */
 .navsec {
   position: fixed;       /* keeps it floating */
   top: 20px;             /* small gap from top */
   left: 50%;
   transform: translateX(-50%); /* center horizontally */
-  width: 90%;            /* not full width, like a box */
+  width: 100%;            /* not full width, like a box */
   max-width: 1200px;     /* limit size */
   z-index: 1000; 
   
 }
 
 .navbar-nsbm {
-  background-color: transparent;
-  padding: 1px 10px;
-  border-radius: 50px;   
+  background-color: rgba(255, 254, 254, 0.8); /* 50% opacity */
+
+  padding: 10px 20px;
+  border-radius: 30px;   
   margin-top: 0.3px;
  
 }
@@ -83,7 +86,7 @@ h1, h4, h5, h6 {
 .navbar-brand span {
     font-weight: Bold;
     font-size: 25px;
-    color: var(--text-secondary);
+    color: green;
 }
 .nav-actions {
     display: flex;
@@ -158,7 +161,7 @@ h1, h4, h5, h6 {
     color: var(--text-primary);
     background: transparent;
     background: var(--nsbm-accent);
-    color: #fff;
+    color: #000000;
     font-weight: 700;
 }
 
@@ -168,21 +171,24 @@ h1, h4, h5, h6 {
 }
 
 .btn-nsbm:hover {
-    background: #e65c00;
+    background: #000000;
 }
 
 .btn:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgb(255, 254, 254);
 }
 
 /* ---------- Hero Section ---------- */
 .hero-section {
-    display: flex;
-    margin-left: 150px;
+    display: center;
+    margin-left: 120px;
     margin-top: -500px;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeUp 1s ease-out forwards;
+    background-color: rgba(235, 233, 233, 0.721); /* semi-transparent black */
+    padding: 20px 20px;
+    border-radius: 12px;
 }
 .herosec {
     display: flex;
@@ -193,6 +199,8 @@ h1, h4, h5, h6 {
 }
 .herosec h1{
     color: black;
+    
+    
 }
 .herosec p{
     color: black;
