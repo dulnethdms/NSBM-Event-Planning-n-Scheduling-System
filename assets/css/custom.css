@@ -431,6 +431,60 @@ h1, h4, h5, h6 {
     font-size: 0.85rem;
 }
 
+
+/* Announcements Section */
+.announcements-section {
+  background: #f9fafb;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.announcements-section h3 {
+  font-size: 1.6rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.announcements-section h3 i {
+  font-size: 1.8rem;
+}
+
+/* List Group Styling */
+.announcements-section .list-group {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.announcements-section .list-group-item {
+  background-color: #fff;
+  border: none;
+  padding: 1rem 1.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.announcements-section .list-group-item:hover {
+  background-color: #f3f4f6;
+}
+
+.announcements-section .fw-bold {
+  font-size: 1rem;
+  color: #111827;
+}
+
+.announcements-section .badge {
+  font-size: 0.75rem;
+  padding: 0.4em 0.6em;
+}
+
+
+
+
+
+
 /* ---------- Footer ---------- */
 footer {
     background-color: var(--nsbm-navy);
